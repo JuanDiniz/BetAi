@@ -24,7 +24,8 @@ class Settings(BaseSettings):
     # API Football
     API_FOOTBALL_KEY: str
     API_FOOTBALL_URL: str = "https://v3.football.api-sports.io"
-
+    API_ODDS_KEY: str = ""
+    
     # Links de afiliado
     AFFILIATE_BETANO: str = ""
     AFFILIATE_BET365: str = ""
