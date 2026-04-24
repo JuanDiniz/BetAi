@@ -119,8 +119,8 @@ class Alert(Base):
     description: Mapped[str] = mapped_column(Text)
 
     # Dados específicos do alerta (JSON como string)
-    metadata: Mapped[str | None] = mapped_column(Text, nullable=True)
-
+    extra_data: Mapped[str | None] = mapped_column(Text, nullable=True)
+    
     # Bookmaker envolvido
     bookmaker: Mapped[str | None] = mapped_column(String(64), nullable=True)
 
