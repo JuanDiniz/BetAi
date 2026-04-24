@@ -1,0 +1,53 @@
+# ─── Python ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ─── Ambiente ─────────────────────────────────────────────
+.env
+.env.local
+.env.production
+*.env
+
+# ─── Banco de dados ───────────────────────────────────────
+*.sqlite3
+*.db
+
+# ─── ML models ────────────────────────────────────────────
+backend/app/ml/models/*.pkl
+backend/app/ml/models/*.joblib
+
+# ─── Vue / Node ───────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# ─── IDEs ─────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# ─── Logs ─────────────────────────────────────────────────
+*.log
+logs/
+celerybeat-schedule
+
+# ─── Playwright ───────────────────────────────────────────
+playwright/.cache/
+
+# ─── Pytest ───────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
