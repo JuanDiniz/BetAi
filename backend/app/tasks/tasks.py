@@ -31,6 +31,17 @@ VALUE_BET_THRESHOLD = float(os.getenv("VALUE_BET_THRESHOLD", "0.05"))
 engine = create_engine(DATABASE_URL_SYNC, echo=False)
 
 
+@celery_app.task(name="run_ml_predictions", bind=True, max_retries=3)
+def run_ml_predictions(self):
+    try:
+        from app.ml.predictor import run_predictions
+        run_predictions()
+        logger.info("[Celery] run_ml_predictions concluído")
+    except Exception as exc:
+        logger.error(f"[Celery] Erro em run_ml_predictions: {exc}")
+        raise self.retry(exc=exc, countdown=120)
+
+
 @celery_app.task(name="collect_odds", bind=True, max_retries=3)
 def collect_odds(self):
     try:

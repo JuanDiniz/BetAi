@@ -30,6 +30,12 @@ beat_schedule = {
         "schedule": 300,
         "options": {"countdown": 30},  # 30s após o collect_odds
     },
+
+    "run-ml-predictions-every-30-minutes": {
+    "task": "run_ml_predictions",
+    "schedule": 1800,  # 30 minutos
+    "options": {"countdown": 60},
+},
 }
 
 # Configurações de performance
